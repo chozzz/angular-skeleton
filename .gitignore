@@ -1,0 +1,9 @@
+/.tmp
+/.sass-cache
+/bower_components
+/app/styles/*.css*
+/dist
+/node_modules
+app/bower_components
+.project
+.settings
