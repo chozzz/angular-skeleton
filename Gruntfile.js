@@ -14,16 +14,16 @@ module.exports = function(grunt) {
 
     // Automatically load required Grunt tasks
     require("jit-grunt")(grunt, {
-        useminPrepare: "grunt-usemin",
-        ngtemplates: "grunt-angular-templates",
-        cdnify: "grunt-google-cdn"
+        "useminPrepare": "grunt-usemin",
+        "ngtemplates": "grunt-angular-templates",
+        "cdnify": "grunt-google-cdn"
     });
 
     // Configurable paths for the application
     var appConfig = {
-        name: require("./bower.json").moduleName || "angularSkeletonApp",
-        app: require("./bower.json").appPath || "app",
-        dist: "dist"
+        "name": require("./bower.json").moduleName || "angularSkeletonApp",
+        "app": require("./bower.json").appPath || "app",
+        "dist": "dist"
     };
 
     var serveStatic = require("serve-static");
@@ -32,43 +32,43 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         // Project settings
-        _config: appConfig,
+        "_config": appConfig,
 
         // Watches files for changes and runs tasks based on the changed files
-        watch: {
-            bower: {
-                files: ["bower.json"],
-                tasks: ["wiredep"]
+        "watch": {
+            "bower": {
+                "files": ["bower.json"],
+                "tasks": ["wiredep"]
             },
-            js: {
-                files: [
+            "js": {
+                "files": [
                     "<%= _config.app %>/scripts/{,*/}*.js",
                     "<%= _config.app %>/modules/**/*.{js,html}",
                 ],
-                tasks: ["newer:jshint:all", "newer:jscs:all"],
-                options: {
-                    livereload: "<%= connect.options.livereload %>"
+                "tasks": ["newer:jshint:all", "newer:jscs:all"],
+                "options": {
+                    "livereload": "<%= connect.options.livereload %>"
                 }
             },
-            jsTest: {
-                files: ["test/spec/{,*/}*.js"],
-                tasks: ["newer:jshint:test", "newer:jscs:test", "karma"]
+            "jsTest": {
+                "files": ["test/spec/{,*/}*.js"],
+                "tasks": ["newer:jshint:test", "newer:jscs:test", "karma"]
             },
-            compass: {
-                files: [
+            "compass": {
+                "files": [
                     "<%= _config.app %>/styles/{,*/}*.{scss,sass}",
                     "<%= _config.app %>/modules/**/*.{scss,sass}"
                 ],
-                tasks: ["concat", "compass:server", "postcss:server"]
+                "tasks": ["concat", "compass:server", "postcss:server"]
             },
-            gruntfile: {
-                files: ["Gruntfile.js"]
+            "gruntfile": {
+                "files": ["Gruntfile.js"]
             },
-            livereload: {
-                options: {
-                    livereload: "<%= connect.options.livereload %>"
+            "livereload": {
+                "options": {
+                    "livereload": "<%= connect.options.livereload %>"
                 },
-                files: [
+                "files": [
                     "<%= _config.app %>/{,*/}*.html",
                     ".tmp/styles/{,*/}*.css",
                     "<%= _config.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}"
@@ -77,17 +77,17 @@ module.exports = function(grunt) {
         },
 
         // The actual grunt server settings
-        connect: {
-            options: {
-                port: 8899,
+        "connect": {
+            "options": {
+                "port": 8899,
                 // Change this to "0.0.0.0" to access the server from outside.
-                hostname: "localhost",
-                livereload: 35566
+                "hostname": "localhost",
+                "livereload": 35566
             },
-            livereload: {
-                options: {
-                    open: true,
-                    middleware: function(connect) {
+            "livereload": {
+                "options": {
+                    "open": true,
+                    "middleware": function (connect) {
                         return [
                             serveStatic(".tmp"),
                             connect().use(
@@ -103,10 +103,10 @@ module.exports = function(grunt) {
                     }
                 }
             },
-            test: {
-                options: {
-                    port: 9001,
-                    middleware: function(connect) {
+            "test": {
+                "options": {
+                    "port": 9001,
+                    "middleware": function (connect) {
                         return [
                             serveStatic(".tmp"),
                             serveStatic("test"),
@@ -119,48 +119,48 @@ module.exports = function(grunt) {
                     }
                 }
             },
-            dist: {
-                options: {
-                    open: true,
-                    base: "<%= _config.dist %>"
+            "dist": {
+                "options": {
+                    "open": true,
+                    "base": "<%= _config.dist %>"
                 }
             }
         },
 
         // Make sure there are no obvious mistakes
-        jshint: {
-            options: {
-                jshintrc: ".jshintrc",
-                reporter: require("jshint-stylish")
+        "jshint": {
+            "options": {
+                "jshintrc": ".jshintrc",
+                "reporter": require("jshint-stylish")
             },
-            all: {
-                src: [
+            "all": {
+                "src": [
                     "Gruntfile.js",
                     "<%= _config.app %>/modules/**/*.js"
                 ]
             },
-            test: {
-                options: {
-                    jshintrc: "test/.jshintrc"
+            "test": {
+                "options": {
+                    "jshintrc": "test/.jshintrc"
                 },
-                src: ["test/spec/{,*/}*.js"]
+                "src": ["test/spec/{,*/}*.js"]
             }
         },
 
         // Make sure code styles are up to par
-        jscs: {
-            options: {
-                config: ".jscsrc",
-                verbose: true
+        "jscs": {
+            "options": {
+                "config": ".jscsrc",
+                "verbose": true
             },
-            all: {
-                src: [
+            "all": {
+                "src": [
                     "Gruntfile.js",
                     "<%= _config.app %>/modules/**/*.js"
                 ]
             },
-            test: {
-                src: ["test/spec/{,*/}*.js"]
+            "test": {
+                "src": ["test/spec/{,*/}*.js"]
             }
         },
 

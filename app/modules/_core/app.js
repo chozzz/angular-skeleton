@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc overview
@@ -9,15 +9,15 @@
  * Main module of the application.
  */
 angular
-.module('angularSkeletonApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ui.router',
-    'ui.bootstrap'
+.module("angularSkeletonApp", [
+    "ngAnimate",
+    "ngCookies",
+    "ngResource",
+    "ngRoute",
+    "ngSanitize",
+    "ngTouch",
+    "ui.router",
+    "ui.bootstrap"
 ])
 .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
@@ -30,9 +30,9 @@ angular
                     "templateUrl": "modules/_core/views/empty.view.html"
                 },
                 "content@home": {
-                    "templateUrl": "modules/home/views/main.html",
-                    "controller": "MainCtrl"
+                    "templateUrl": "modules/home/views/home.view.html",
+                    "controller": "HomeCtrl"
                 }
             }
-        })
+        });
 }]);
