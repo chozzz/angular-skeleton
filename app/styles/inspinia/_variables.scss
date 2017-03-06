@@ -1,17 +1,3 @@
-// Glyphicons font path
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-
-// Fontawesome font path
-$fa-font-path: "../bower_components/font-awesome/fonts";
-
-// Sizes
-$sr-xxs: 280px;
-$sr-xs: 320px;
-$sr-sm: 480px;
-$sr-md: 768px;
-$sr-lg: 992px;
-$sr-xl: 1200px;
-
 // Basic Colors
 $navy: #1ab394;       // Primary color
 $dark-gray: #c2c2c2;  // Default color
@@ -42,10 +28,12 @@ $sidebar-width: 220px;
 
 // Boxed layout width
 $boxed-width: 1200px;
+$boxed-backgound: url('patterns/shattered.png');
 
 //Border radius for buttons
 $btn-border-radius: 3px;
 
 //Navigation
 $nav-bg: #2F4050;
+$nav-profil-pattern: url("patterns/header-profile.png");
 $nav-text-color: #a7b1c2;

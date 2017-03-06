@@ -11,11 +11,12 @@
   "undef": true,
   "unused": true,
   "camelcase": false,
+  "quotmark": "double",
   "globals": {
     "angular": false,
-    "google": false,
     "moment": false,
+    "toastr": false,
     "$": false,
-    "toastr": false
+    "_": false
   }
 }

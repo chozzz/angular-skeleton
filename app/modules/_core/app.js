@@ -19,17 +19,20 @@ angular
     'ui.router',
     'ui.bootstrap'
 ])
-.config(function ($routeProvider) {
-    $routeProvider
-    .when('/', {
-        templateUrl: 'modules/home/views/main.html',
-        controller: 'MainCtrl'
-    })
-    .when('/about', {
-        templateUrl: 'modules/about/views/about.html',
-        controller: 'AboutCtrl'
-    })
-    .otherwise({
-        redirectTo: '/'
-    });
-});
+.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider
+        .state("home", {
+            "url": "/",
+            "views": {
+                "root": {
+                    "templateUrl": "modules/_core/views/empty.view.html"
+                },
+                "content@home": {
+                    "templateUrl": "modules/home/views/main.html",
+                    "controller": "MainCtrl"
+                }
+            }
+        })
+}]);
